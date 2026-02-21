@@ -1,0 +1,45 @@
+.hospital-finder {
+  width: 100%;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+.hospital-finder h1 {
+  margin: 0 0 0.5rem;
+}
+
+.hospital-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.bed-card .address {
+  font-size: 0.85rem;
+  color: var(--muted);
+  margin-bottom: 0.75rem;
+}
+
+.bed-status {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.bed-row {
+  display: flex;
+  justify-content: space-between;
+  padding: 0.4rem 0;
+  border-bottom: 1px solid var(--border);
+  font-size: 0.9rem;
+}
+
+.bed-type {
+  font-weight: 500;
+}
+
+.bed-available {
+  color: var(--primary);
+}

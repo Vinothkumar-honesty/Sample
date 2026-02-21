@@ -1,0 +1,23 @@
+✅ DATABASE FIXED AND SEEDED!
+
+Now run these final commands:
+
+1. Create superuser:
+   python manage.py createsuperuser
+   (Enter username, email, password)
+
+2. Start backend server:
+   python manage.py runserver
+
+3. In a NEW terminal, start frontend:
+   cd "c:\Users\admin\Desktop\MEDTRACK AI\frontend"
+   npm run dev
+
+✅ Access:
+- Frontend: http://localhost:5173
+- Backend API: http://localhost:8000/api
+- Admin: http://localhost:8000/admin
+
+✅ Test:
+1. Register new user at http://localhost:5173/register
+2. Login and test features

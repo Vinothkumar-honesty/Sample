@@ -1,0 +1,24 @@
+✅ ISSUE FIXED: Missing migrations folders created!
+
+Now run these commands in order:
+
+1. Create migrations for all apps:
+python manage.py makemigrations users
+python manage.py makemigrations triage
+python manage.py makemigrations hospital
+python manage.py makemigrations appointments
+python manage.py makemigrations prediction
+python manage.py makemigrations records
+
+2. Apply migrations:
+python manage.py migrate
+
+3. Create superuser:
+python manage.py createsuperuser
+
+4. Seed demo data:
+python manage.py seed_hospitals
+python manage.py seed_visits
+
+5. Run server:
+python manage.py runserver

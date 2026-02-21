@@ -1,0 +1,282 @@
+.triage-page {
+  width: 100%;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+.triage-page h1 {
+  margin: 0 0 0.5rem;
+  font-size: 1.5rem;
+  background: linear-gradient(135deg, var(--text) 0%, var(--muted) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: slideUp 0.5s ease;
+}
+
+.triage-form {
+  max-width: 900px;
+  margin-top: 2rem;
+  animation: slideUp 0.6s ease;
+}
+
+.form-section {
+  margin-bottom: 2rem;
+  padding: 1.5rem;
+  background: rgba(30, 41, 59, 0.6);
+  backdrop-filter: blur(10px);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+}
+
+.form-section h3 {
+  margin: 0 0 1rem;
+  font-size: 1.2rem;
+  color: var(--text);
+}
+
+.form-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1rem;
+}
+
+.form-field label {
+  display: block;
+  margin-bottom: 0.5rem;
+  color: var(--text);
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+
+.form-field input,
+.form-field select {
+  width: 100%;
+  padding: 0.75rem;
+  border: 2px solid var(--border);
+  border-radius: var(--radius);
+  background: rgba(15, 23, 42, 0.5);
+  color: var(--text);
+  transition: all 0.2s ease;
+}
+
+.form-field input:focus,
+.form-field select:focus {
+  border-color: var(--primary);
+  background: rgba(15, 23, 42, 0.8);
+  box-shadow: 0 0 0 3px var(--primary-glow);
+}
+
+.patient-info {
+  padding: 1rem;
+  background: rgba(0, 0, 0, 0.2);
+  border-radius: var(--radius);
+  margin-bottom: 1.5rem;
+  font-size: 1.1rem;
+}
+
+.clinical-info,
+.department-info,
+.ai-summary {
+  padding: 1rem;
+  background: rgba(0, 0, 0, 0.2);
+  border-radius: var(--radius);
+  margin: 1rem 0;
+  border-left: 4px solid var(--primary);
+}
+
+.clinical-info strong,
+.department-info strong,
+.ai-summary strong {
+  display: block;
+  margin-bottom: 0.5rem;
+  color: var(--text);
+}
+
+.clinical-info p,
+.department-info p,
+.ai-summary p {
+  margin: 0;
+  color: var(--muted);
+}
+
+.symptom-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-bottom: 1.5rem;
+}
+
+.symptom-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1.25rem;
+  background: rgba(30, 41, 59, 0.6);
+  backdrop-filter: blur(10px);
+  border: 2px solid var(--border);
+  border-radius: 999px;
+  cursor: pointer;
+  font-size: 0.95rem;
+  transition: all 0.2s ease;
+  animation: scaleIn 0.3s ease;
+}
+
+.symptom-chip input {
+  margin: 0;
+  cursor: pointer;
+}
+
+.symptom-chip:hover {
+  border-color: var(--primary);
+  background: rgba(59, 130, 246, 0.1);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px var(--primary-glow);
+}
+
+.symptom-chip:has(input:checked) {
+  border-color: var(--primary);
+  background: linear-gradient(135deg, rgba(59, 130, 246, 0.2) 0%, rgba(37, 99, 235, 0.2) 100%);
+  box-shadow: 0 4px 12px var(--primary-glow);
+  animation: pulse 0.3s ease;
+}
+
+.triage-form textarea {
+  width: 100%;
+  margin-top: 0.5rem;
+  padding: 1rem;
+  border: 2px solid var(--border);
+  border-radius: var(--radius);
+  background: rgba(15, 23, 42, 0.5);
+  color: var(--text);
+  resize: vertical;
+  min-height: 100px;
+  transition: all 0.2s ease;
+}
+
+.triage-form textarea:focus {
+  border-color: var(--primary);
+  background: rgba(15, 23, 42, 0.8);
+  box-shadow: 0 0 0 3px var(--primary-glow);
+}
+
+.triage-form label {
+  display: block;
+  margin-bottom: 1rem;
+  color: var(--text);
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+.triage-form button {
+  padding: 1rem 2rem;
+  background: linear-gradient(135deg, var(--primary) 0%, #2563eb 100%);
+  color: white;
+  border: none;
+  border-radius: var(--radius);
+  font-weight: 600;
+  font-size: 1rem;
+  box-shadow: 0 4px 12px var(--primary-glow);
+  margin-top: 1rem;
+  width: 100%;
+}
+
+.triage-form button:hover:not(:disabled) {
+  box-shadow: 0 6px 20px var(--primary-glow);
+}
+
+.triage-result {
+  margin-bottom: 2rem;
+  max-width: 900px;
+  padding: 2rem;
+  animation: slideUp 0.5s ease;
+  border: 2px solid;
+  position: relative;
+  overflow: hidden;
+}
+
+.triage-result::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: currentColor;
+}
+
+.triage-result.badge-low {
+  border-color: var(--success);
+  background: linear-gradient(135deg, rgba(16, 185, 129, 0.15) 0%, rgba(5, 150, 105, 0.15) 100%);
+}
+
+.triage-result.badge-medium {
+  border-color: var(--warning);
+  background: linear-gradient(135deg, rgba(245, 158, 11, 0.15) 0%, rgba(217, 119, 6, 0.15) 100%);
+}
+
+.triage-result.badge-high {
+  border-color: var(--danger);
+  background: linear-gradient(135deg, rgba(239, 68, 68, 0.15) 0%, rgba(220, 38, 38, 0.15) 100%);
+  animation: pulse 2s ease-in-out infinite;
+}
+
+.triage-result h3 {
+  margin: 0 0 1.5rem;
+  font-size: 1.5rem;
+}
+
+.result-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.result-item {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.result-label {
+  font-size: 0.9rem;
+  color: var(--muted);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  font-weight: 600;
+}
+
+.result-score {
+  font-size: 2.5rem;
+  font-weight: 700;
+  background: linear-gradient(135deg, var(--primary) 0%, #60a5fa 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.result-progress {
+  width: 100%;
+  margin-bottom: 1.5rem;
+}
+
+.result-message {
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin: 1rem 0;
+  padding: 1rem;
+  background: rgba(0, 0, 0, 0.2);
+  border-radius: var(--radius);
+  border-left: 4px solid currentColor;
+}
+
+.result-message::first-letter {
+  font-size: 1.5rem;
+}
+
+.small {
+  font-size: 0.85rem;
+  margin-top: 1rem;
+}
